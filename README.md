@@ -45,3 +45,21 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## More Info
+
+Inside that directory, you can run several commands:
+
+  - yarn start
+    Starts the development server.
+
+  - yarn build
+    Bundles the app into static files for production.
+
+  - yarn test
+    Starts the test runner.
+
+  - yarn eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
