@@ -1,6 +1,7 @@
 /** @module utils */
-import { clean, isArray } from './array';
-import { isObject } from './object';
+import { clean } from '@bit/sstephens.components.clean';
+import { isArray } from '@bit/sstephens.components.is-array';
+import { isObject } from '@bit/sstephens.components.is-object';
 
 /**
  * Takes any number of args and normalizes
@@ -8,14 +9,14 @@ import { isObject } from './object';
  *
  * null, undefined or empty string will be filtered out of the className string
  *
- * @name classNames
- * @param {mixed} [...args] - The values to add to className
+ * @name cls
+ * @param {mixed} args [args] - The values to add to className
  * @return {string}
  * @example
  *  const cls = classNames('name', test != null ? 'class' : null, ['more', 'classes'], test2 ? 'test' : '');
  *  return (<div className={cls} />);
  */
-export default function classNames(...args: any[]): string {
+export function cls(...args: any[]): string {
   const cls = args.map(v => _clsmod(v));
   const clsNorm = cls.map(a => convertArray(clean(a)));
   return convertArray(clean(clsNorm));
@@ -46,3 +47,4 @@ const convertString = (cls: string): string[] => {
 const convertArray = (clsArray: string[]): string => {
   return clsArray.join(' ');
 };
+

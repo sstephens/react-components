@@ -6,6 +6,7 @@
   "repository": "git@github.com:sstephens/react-components.git",
   "author": "Sean Stephens <seans@shotzoom.com>",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

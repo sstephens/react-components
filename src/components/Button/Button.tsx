@@ -1,6 +1,6 @@
 /** @module components */
 import React from 'react';
-import { cls } from './../../utils';
+import { cls } from '@bit/sstephens.components.cls';
 import './styles.css';
 
 /**
