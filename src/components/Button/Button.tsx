@@ -10,6 +10,14 @@ type Props = React.PropsWithChildren<{
 	color?: string;
 }>;
 
+/**
+ * Renders a clickable button
+ *
+ * @method Button
+ * @param {() => void} onClick
+ * @param {string} color
+ * @return {Element}
+ */
 export default function Button(props: Props) {
 	const handleClick = () => {
 		if (typeof props.onClick === 'function') {
