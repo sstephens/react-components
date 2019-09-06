@@ -1,6 +1,6 @@
 /** @module Components */
 import React from 'react';
-import cls from './../../utils/classNames';
+import { cls } from './../../utils';
 import './styles.css';
 
 /**

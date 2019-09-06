@@ -1,6 +1,6 @@
 /** @module utils */
-import isNone from './isNone';
-import { clean } from './array/clean';
+import { clean, isArray } from './array';
+import { isObject } from './object';
 
 /**
  * Takes any number of args and normalizes
@@ -23,12 +23,16 @@ export default function classNames(...args: any[]): string {
 
 const _clsmod = (cls: any): any[] => {
   if (typeof cls === 'string') {
-    return convertString(cls);
-  } else if (Array.isArray(cls)) {
-    return cls;
-  } else if (!isNone(cls) && typeof cls === 'object') {
-    return clean(Object.keys(cls).map(key => ((!!cls[key]) ? key : null)));
-  } else if (typeof cls === 'number') {
+    return clean(convertString(cls));
+  } else if (isArray(cls)) {
+    return clean(cls);
+  } else if (isObject(cls)) {
+    return clean(
+      Object.keys(cls).map(key =>
+        !!cls[key] ? key : null
+      )
+    );
+  } else if (typeof cls === 'number' && !isNaN(cls)) {
     return [ `${cls}` ];
   } else {
     return [];
@@ -36,7 +40,7 @@ const _clsmod = (cls: any): any[] => {
 };
 
 const convertString = (cls: string): string[] => {
-  return cls.split(' ');
+  return cls.trim().split(' ');
 };
 
 const convertArray = (clsArray: string[]): string => {
