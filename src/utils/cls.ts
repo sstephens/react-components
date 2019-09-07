@@ -1,7 +1,7 @@
 /** @module utils */
-import { clean } from '@bit/sstephens.components.clean';
-import { isArray } from '@bit/sstephens.components.is-array';
-import { isObject } from '@bit/sstephens.components.is-object';
+import clean from './array/clean';
+import isArray from './array/isArray';
+import isObject from './object/isObject';
 
 /**
  * Takes any number of args and normalizes

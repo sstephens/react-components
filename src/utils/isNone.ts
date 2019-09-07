@@ -18,7 +18,7 @@
  * @param {mixed} value - The value to test
  * @return {boolean}
  */
-export function isNone(value: any): boolean {
+export default function isNone(value: any): boolean {
   return value === null || value === undefined;
 }
 

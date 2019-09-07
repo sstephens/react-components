@@ -8,7 +8,7 @@
  * @param {mixed} value - The value to test
  * @return {boolean}
  */
-export function isObject(value: any) {
+export default function isObject(value: any) {
   if (value != null && typeof value === 'object' && !Array.isArray(value)) {
     return true;
   }

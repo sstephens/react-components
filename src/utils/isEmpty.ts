@@ -1,5 +1,5 @@
 /** @module utils */
-import { isNone } from '@bit/sstephens.components.is-none';
+import isNone from './isNone';
 
 /**
  * Verifies that a value is `null` or `undefined`, an empty string, or an empty
@@ -24,11 +24,18 @@ import { isNone } from '@bit/sstephens.components.is-none';
  * isEmpty({ size: 1 })       // false
  * isEmpty({ size: () => 0 }) // false
  * ```
+ *
  * @name isEmpty
  * @param {mixed} value - The value to test
  * @return {boolean}
+ * @example
+ *  export default [
+ *    isEmpty(),
+ *    isEmpty(null),
+ *    isEmpty(undefined),
+ *  ];
  */
-export function isEmpty(value: any): boolean {
+export default function isEmpty(value: any): boolean {
   if (isNone(value)) {
     return true;
   }
